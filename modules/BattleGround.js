@@ -16,7 +16,7 @@ export class BattleGround {
 
         async function playRound(attacker, defender) {
             let attack = attacker.attack;
-            let defense = defender.defense;
+            let strength = defender.strength;
 
             let attackRoll = rollDice();
             let defenseRoll = rollDice();
@@ -27,11 +27,12 @@ export class BattleGround {
             await delay(500);
 
             let damage = attack * attackRoll;
-            let damageDefended = defense * defenseRoll;
+            let damageDefended = strength * defenseRoll;
 
             let damageTaken = Math.max(0, damage - damageDefended);
             defender.getDamaged(damageTaken);
 
+            console.log(`${attacker.name} dealt ${damageTaken} damage to ${defender.name}!`);
             console.log(`${attacker.name}'s health: ${attacker.health}`);
             console.log(`${defender.name}'s health: ${defender.health}`);
             await delay(1000);
@@ -47,7 +48,5 @@ export class BattleGround {
         }
 
         return battle(attacker, defender);
-
-        return attacker.isAlive() ? attacker : defender;
     }
 }
