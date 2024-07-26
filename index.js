@@ -19,7 +19,7 @@ const getPlayerDetails = async() => {
         name: playerName,
         health: playerHealth,
         attack: playerAttack,
-        defense: playerDefense
+        strength: playerDefense
     };
 };
 
@@ -72,10 +72,11 @@ async function main() {
                     break;
                 } else {
                     const playerDetails = await getPlayerDetails();
-                    players.push(new Player(playerDetails.id, playerDetails.name, playerDetails.health, playerDetails.attack, playerDetails.defense));
+                    players.push(new Player(playerDetails.id, playerDetails.name, playerDetails.health, playerDetails.attack, playerDetails.strength));
                     console.log(`Player added successfully: ${playerDetails.name}`);
                     break;
                 }
+
 
             case 2:
                 console.log('Displaying all players...\n');
@@ -85,10 +86,11 @@ async function main() {
                     console.log(`Player Name: ${player.name}`);
                     console.log(`Health: ${player.health}`);
                     console.log(`Attack: ${player.attack}`);
-                    console.log(`Strength: ${player.defense}`);
+                    console.log(`Strength: ${player.strength}`);
                     console.log('');
                 });
                 break;
+
 
             case 3:
                 console.log('Starting the battle!');
@@ -100,17 +102,19 @@ async function main() {
                     let winner = await battle(players);
 
                     if (winner) {
-                        console.log(`Player ${winner.name} won the game!`);
+                        console.log(`\nPlayer ${winner.name} won the game!`);
                     }
 
                     break;
                 }
+
 
             case 4:
                 console.log('Goodbye!');
                 process.exit(0);
                 break;
 
+                
             default:
                 console.log('Invalid choice. Please try again.');
         }
