@@ -1,8 +1,10 @@
 import readline from "readline";
 
+
 function isInt(value) {
     return !isNaN(value) && parseInt(value) === parseFloat(value);
 }
+
 
 export function getInputStr(prompt) {
     const rl = readline.createInterface({
@@ -25,6 +27,7 @@ export function getInputStr(prompt) {
         getInput();
     });
 };
+
 
 export function getInputInt(prompt) {
     const rl = readline.createInterface({
@@ -49,17 +52,24 @@ export function getInputInt(prompt) {
     });
 };
 
+
+export function rollDice() {
+    const diceRoll = Math.floor(Math.random() * 6) + 1;
+    return diceRoll;
+};
+
+
 export function welcomeMessage() {
-    console.log('');
-    console.log('Welcome to the Magic Arena!');
+    console.log('\nWelcome to the Magic Arena!');
     console.log('-'.repeat(30));
-    console.log('');
     console.log('');
 };
 
+
 export function gameOptions() {
-    console.log('1. Add Player to the Magic Arena');
-    console.log('2. Display Player Information');
-    console.log('3. Start the Battle!');
-    console.log('4. Exit');
+    console.log('\nChoose your option:');
+    console.log('\t1. Add Player to the Magic Arena');
+    console.log('\t2. Display All Players');
+    console.log('\t3. Start the Battle!');
+    console.log('\t4. Exit');
 };
