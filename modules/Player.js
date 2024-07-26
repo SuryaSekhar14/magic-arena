@@ -6,4 +6,16 @@ export class Player {
         this.attack = attack;
         this.defense = defense;
     }
+
+    isAlive() {
+        return this.health > 0;
+    }
+
+    getDamaged(damage) {
+        this.health -= damage;
+    }
+
+    getName() {
+        return this.name;
+    }
 }
