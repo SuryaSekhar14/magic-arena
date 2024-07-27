@@ -21,7 +21,7 @@ export class BattleGround {
             let attackRoll = rollDice();
             let defenseRoll = rollDice();
 
-            console.log(`${attacker.name} rolled: ${attackRoll}`);
+            console.log(`\n${attacker.name} rolled: ${attackRoll}`);
             await delay(500);
             console.log(`${defender.name} rolled: ${defenseRoll}`);
             await delay(500);
@@ -32,7 +32,7 @@ export class BattleGround {
             let damageTaken = Math.max(0, damage - damageDefended);
             defender.getDamaged(damageTaken);
 
-            console.log(`${attacker.name} dealt ${damageTaken} damage to ${defender.name}!`);
+            console.log(`\n${attacker.name} dealt ${damageTaken} damage to ${defender.name}!`);
             console.log(`${attacker.name}'s health: ${attacker.health}`);
             console.log(`${defender.name}'s health: ${defender.health}`);
             await delay(1000);

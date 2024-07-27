@@ -8,7 +8,7 @@ function generatePlayerId() {
 }
 
 
-const getPlayerDetails = async() => {
+const getPlayerDetailsFromUser = async() => {
     const playerName = await getInputStr('Enter your player name: ');
     const playerHealth = await getInputInt('Enter your player health: ');
     const playerAttack = await getInputInt('Enter your player attack: ');
@@ -55,10 +55,12 @@ async function main() {
     let players = [];
     const playerLimit = 2;
 
-
-    welcomeMessage();
-
-
+    try {
+        await welcomeMessage();
+    } catch (error) {
+        console.log('An error occoured: ', error.message);
+    }
+    
     while(userInput !== 3) {
         gameOptions();
 
@@ -71,7 +73,7 @@ async function main() {
                     console.log('Player limit reached. Cannot add more players.');
                     break;
                 } else {
-                    const playerDetails = await getPlayerDetails();
+                    const playerDetails = await getPlayerDetailsFromUser();
                     players.push(new Player(playerDetails.id, playerDetails.name, playerDetails.health, playerDetails.attack, playerDetails.strength));
                     console.log(`Player added successfully: ${playerDetails.name}`);
                     break;

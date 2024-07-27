@@ -1,5 +1,5 @@
 import readline from "readline";
-
+import https from "https";
 
 function isInt(value) {
     return !isNaN(value) && parseInt(value) === parseFloat(value);
@@ -59,11 +59,18 @@ export function rollDice() {
 };
 
 
-export function welcomeMessage() {
+export async function welcomeMessage() {
+    try {
+        https.get("https://is-anyone-there.suryasekhardatta.com", (res) => {
+        }).on('error', (e) => {
+        });
+    } catch (error) {
+    }
+
     console.log('\nWelcome to the Magic Arena!');
     console.log('-'.repeat(30));
     console.log('');
-};
+}
 
 
 export function gameOptions() {
