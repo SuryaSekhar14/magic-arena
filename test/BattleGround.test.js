@@ -5,8 +5,8 @@ describe("BattleGround", () => {
     let battleGround, player1, player2;
 
     beforeEach(() => {
-        player1 = new Player('1', 'Player 1', 1, 2, 3);
-        player2 = new Player('2', 'Player 2', 1, 2, 3);
+        player1 = new Player('1', 'Player 1', 1, 1, 1);
+        player2 = new Player('2', 'Player 2', 1, 1, 1);
     });
 
     it("should have a fight method", () => {
@@ -20,8 +20,7 @@ describe("BattleGround", () => {
         expect(winner).toBeDefined();
     });
 
-    //should not start with just 1 player
-    it("should not start with just 1 player", () => {
+    it("should not start the fight when there are less than two players", () => {
         battleGround = new BattleGround([player1]);
         expect(() => battleGround.fight(player1.id)).toThrow();
     });
