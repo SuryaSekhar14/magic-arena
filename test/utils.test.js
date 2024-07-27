@@ -47,7 +47,7 @@ describe("getInputPositiveInt", () => {
 
     it("should prompt again if non-integer input is provided", async () => {
         const prompt = "Enter a positive integer: ";
-        const mockInputs = ["abc", "42"]; // Ensure inputs are strings
+        const mockInputs = ["abc", "42"];
         const readlineInterface = {
             question: jest.fn().mockImplementation((_, callback) => {
                 callback(mockInputs.shift());
@@ -71,3 +71,4 @@ describe("rollDice", () => {
         expect(result).toBeLessThanOrEqual(6);
     });
 });
+

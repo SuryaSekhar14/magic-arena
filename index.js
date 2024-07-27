@@ -3,7 +3,7 @@ import { Player } from './modules/Player.js';
 import { BattleGround } from './modules/BattleGround.js';
 
 
-function generatePlayerId() {
+export function generatePlayerId() {
     return Math.floor(Math.random() * 100000) + Date.now();
 }
 
