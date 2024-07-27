@@ -29,24 +29,24 @@ export function getInputStr(prompt) {
 };
 
 
-export function getInputInt(prompt) {
+export function getInputPositiveInt(prompt) {
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
-        });
+    });
 
     return new Promise((resolve) => {
         const getInput = () => {
-        rl.question(prompt, (userInput) => {
-            let userInputTrimmed = userInput.trim();
-            if (isInt(userInputTrimmed)) {
-                rl.close();
-                resolve(parseInt(userInputTrimmed));
-            } else {
-                console.log('Please enter a valid integer.');
-                getInput();
-            }
-        });
+            rl.question(prompt, (userInput) => {
+                let userInputTrimmed = userInput.trim();
+                if (isInt(userInputTrimmed) && parseInt(userInputTrimmed) > 0) {
+                    rl.close();
+                    resolve(parseInt(userInputTrimmed));
+                } else {
+                    console.log('Please enter a valid positive integer.');
+                    getInput();
+                }
+            });
         };
         getInput();
     });

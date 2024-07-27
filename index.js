@@ -1,4 +1,4 @@
-import { getInputStr, getInputInt, welcomeMessage, gameOptions } from './utils.js';
+import { getInputStr, getInputPositiveInt, welcomeMessage, gameOptions } from './utils.js';
 import { Player } from './modules/Player.js';
 import { BattleGround } from './modules/BattleGround.js';
 
@@ -10,9 +10,9 @@ function generatePlayerId() {
 
 const getPlayerDetailsFromUser = async() => {
     const playerName = await getInputStr('Enter your player name: ');
-    const playerHealth = await getInputInt('Enter your player health: ');
-    const playerAttack = await getInputInt('Enter your player attack: ');
-    const playerDefense = await getInputInt('Enter your player strength: ');
+    const playerHealth = await getInputPositiveInt('Enter your player health: ');
+    const playerAttack = await getInputPositiveInt('Enter your player attack: ');
+    const playerDefense = await getInputPositiveInt('Enter your player strength: ');
 
     return {
         id: generatePlayerId(),
@@ -64,7 +64,7 @@ async function main() {
     while(userInput !== 3) {
         gameOptions();
 
-        userInput = await getInputInt('Enter your choice (1-4): ');
+        userInput = await getInputPositiveInt('Enter your choice (1-4): ');
         console.log('');
 
         switch(userInput) {
