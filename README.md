@@ -6,6 +6,8 @@ Made using JavaScript, Node.js, and Jest, without using any third-party librarie
 
 Sufficient tests are written to cover the codebase, and all methods and functions. Documentation for everything can be found below.
 
+The game uses a simple, easy-to-read, mantainable design and codebase, and is scalable for multiple players as well. Just incerase the max number of players in the `index.js` file. 
+
 ## Problem Statement
 Design a Magical Arena. Every Player is defined by a "health" attribute, "strength" attribute, and an "attack" attribute - all positive integers. The player dies if his health attribute touches 0.
 
