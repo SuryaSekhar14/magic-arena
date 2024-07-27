@@ -5,8 +5,8 @@ describe("BattleGround", () => {
     let battleGround, player1, player2;
 
     beforeEach(() => {
-        player1 = new Player('1', 'Player 1', 1, 1, 1);
-        player2 = new Player('2', 'Player 2', 1, 1, 1);
+        player1 = new Player('1', 'Player 1', 1, 5, 1);
+        player2 = new Player('2', 'Player 2', 1, 5, 1);
     });
 
     it("should have a fight method", () => {
