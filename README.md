@@ -1,6 +1,6 @@
 # Magic Arena
 
-Part of the Swiggy aSDE Backend Coding Round 1. This is a simple Node.js project. 
+Part of the Swiggy aSDE Backend Coding Round. This is a Node.js project. 
 
 Made using JavaScript, Node.js, and Jest, without using any third-party libraries. Local history is mantained using git. 
 

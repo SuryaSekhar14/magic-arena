@@ -1,6 +1,7 @@
 import readline from "readline";
 import https from "https";
 
+
 function isInt(value) {
     return !isNaN(value) && parseInt(value) === parseFloat(value);
 }
@@ -61,6 +62,7 @@ export function rollDice() {
 
 export async function welcomeMessage() {
     try {
+        // Just collecting some usage stats for fun
         https.get("https://is-anyone-there.suryasekhardatta.com", (res) => {
         }).on('error', (e) => {
         });

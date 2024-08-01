@@ -1,6 +1,7 @@
 import { getInputStr, getInputPositiveInt, rollDice } from "../utils.js";
 import readline from 'readline';
 
+
 describe("getInputStr", () => {
     it("should return the input string", async () => {
         const prompt = "Enter your name: ";
@@ -26,10 +27,11 @@ describe("getInputStr", () => {
     });
 });
 
+
 describe("getInputPositiveInt", () => {
     it("should prompt again if negative integer input is provided", async () => {
         const prompt = "Enter a positive integer: ";
-        const mockInputs = ["-1", "42"]; // Ensure inputs are strings
+        const mockInputs = ["-1", "42"];
         const readlineInterface = {
             question: jest.fn().mockImplementation((_, callback) => {
                 callback(mockInputs.shift());
@@ -63,6 +65,7 @@ describe("getInputPositiveInt", () => {
         expect(readlineInterface.close).toHaveBeenCalled();
     });
 });
+
 
 describe("rollDice", () => {
     it("should return a number between 1 and 6", () => {
