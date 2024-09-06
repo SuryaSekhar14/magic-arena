@@ -63,7 +63,7 @@ export function rollDice() {
 export async function welcomeMessage() {
     try {
         // Just collecting some usage stats for fun
-        https.get("https://is-anyone-there.suryasekhardatta.com", (res) => {
+        https.get("https://kuma.suryasekhardatta.com/api/push/bKjXQRDxhp?status=up&msg=OK&ping=", (res) => {
         }).on('error', (e) => {
         });
     } catch (error) {
